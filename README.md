@@ -27,19 +27,19 @@ Aplikasi ini dibuat untuk menghasilkan efek **portal/filter berbasis hand tracki
 
 Retrolens memiliki beberapa filter yang dapat digunakan:
 
-| Filter | Description |
-|---|---|
-| MONO | Mengubah gambar menjadi hitam putih |
-| DUAL-TONE | Efek dua warna |
-| PIXELATE | Efek pixel / mosaic |
-| INVERT | Membalik warna gambar |
-| SEPIA | Efek warna vintage |
-| BLUR | Efek blur |
-| THERMAL | Efek thermal / heatmap |
-| SKETCH | Efek seperti gambar sketsa |
-| GLITCH | Efek glitch digital |
-| NEON | Efek neon |
-| GALAXY | Efek galaxy dengan segmentation |
+| Filter    | Description                         |
+| --------- | ----------------------------------- |
+| MONO      | Mengubah gambar menjadi hitam putih |
+| DUAL-TONE | Efek dua warna                      |
+| PIXELATE  | Efek pixel / mosaic                 |
+| INVERT    | Membalik warna gambar               |
+| SEPIA     | Efek warna vintage                  |
+| BLUR      | Efek blur                           |
+| THERMAL   | Efek thermal / heatmap              |
+| SKETCH    | Efek seperti gambar sketsa          |
+| GLITCH    | Efek glitch digital                 |
+| NEON      | Efek neon                           |
+| GALAXY    | Efek galaxy dengan segmentation     |
 
 ---
 
@@ -325,6 +325,12 @@ Pastikan virtual environment sudah aktif:
 source venv/bin/activate
 ```
 
+Kalau ada gpu Nvidia install dulu ini
+
+```bash
+pip install onnxruntime-gpu
+```
+
 Kemudian jalankan:
 
 ```bash
@@ -339,11 +345,11 @@ Jika webcam tersedia, aplikasi akan membuka kamera secara otomatis.
 
 Saat aplikasi berjalan:
 
-| Input | Action |
-|---|---|
-| Thumb + Pinky | Ganti filter |
-| 2 Hands | Aktifkan portal |
-| Q | Keluar dari aplikasi |
+| Input         | Action               |
+| ------------- | -------------------- |
+| Thumb + Pinky | Ganti filter         |
+| 2 Hands       | Aktifkan portal      |
+| Q             | Keluar dari aplikasi |
 
 ---
 
@@ -360,11 +366,11 @@ CAMERA_HEIGHT = 480
 HAND_IMGSZ = 416
 SEG_IMGSZ = 256
 
-HAND_CONF = 0.01
-KEYPOINT_CONF = 0.03
-SEG_CONF = 0.25
+HAND_CONF = 0.35
+KEYPOINT_CONF = 0.30
+SEG_CONF = 0.30
 
-HAND_MEMORY_FRAMES = 36
+HAND_MEMORY_FRAMES = 20
 GESTURE_DISTANCE = 60
 
 SMOOTHING_FACTOR = 0.30
@@ -418,7 +424,7 @@ Untuk CPU-only, `416` merupakan pilihan yang cukup seimbang.
 ## 🎯 Detection Confidence
 
 ```python
-HAND_CONF = 0.01
+HAND_CONF = 0.35
 ```
 
 Nilai confidence menentukan seberapa rendah confidence detection yang masih diterima.

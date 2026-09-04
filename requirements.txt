@@ -1,3 +1,6 @@
+rtmlib
+onnxruntime
+filterpy
 ultralytics
 opencv-python
 numpy
